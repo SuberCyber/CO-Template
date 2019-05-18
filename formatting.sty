@@ -1,0 +1,18 @@
+\ProvidesPackage{formatting}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
+
+% No indentation on new paragraphs
+\setlength{\parindent}{0pt}
+
+
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Course Code}
+\renewcommand{\headrulewidth}{2pt}
+
+% Question
+\newcounter{qcount} 
+\newcommand{\question}{\clearpage \refstepcounter{qcount} \section*{Question \theqcount.}}
