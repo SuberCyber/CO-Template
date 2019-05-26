@@ -1,6 +1,8 @@
 \ProvidesPackage{formatting}
 \usepackage[utf8]{inputenc}
 \usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{xcolor}
 
 % No indentation on new paragraphs
 \setlength{\parindent}{0pt}
@@ -10,9 +12,14 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Course Code}
+\rhead{CO 250}
 \renewcommand{\headrulewidth}{2pt}
 
 % Question
 \newcounter{qcount} 
 \newcommand{\question}{\clearpage \refstepcounter{qcount} \section*{Question \theqcount.}}
+
+%Comments
+\newcommand{\note}[1]{\textcolor{blue}{#1}}
+%% To display final version:
+% \newcommand{\note}[1]{}
