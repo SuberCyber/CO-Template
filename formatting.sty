@@ -3,6 +3,12 @@
 \usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
 \usepackage{setspace}
 \usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{setspace}
+
+
+\newtoggle{subsectionsNewPages}
+\newtoggle{showQuestion}
 
 % No indentation on new paragraphs
 \setlength{\parindent}{0pt}
@@ -15,9 +21,30 @@
 \rhead{\class}
 \renewcommand{\headrulewidth}{2pt}
 
-% Question
-\newcounter{qcount} 
-\newcommand{\question}{\clearpage \refstepcounter{qcount} \section*{Question \theqcount.}}
+
+\newcounter{question}
+\newcounter{subquestion}
+\setcounter{question}{0}
+\newcommand{\question}{
+    \stepcounter{question}
+    \iftoggle{showQuestion}{\Large \newpage Question \thequestion. }{}
+    \toggletrue{showQuestion}
+    \defcounter{subsection}{0} 
+}
+% \renewcommand*\thesection{\normalsize Question \arabic{section}.}
+\newcommand{\subquestion}{
+    \stepcounter{subquestion} 
+    \iftoggle{subsectionsNewPages}{\newpage}{\vskip10pt}
+    
+    \iftoggle{subsectionsNewPages}{\large Question \thequestion. Part \Alph{subquestion}.
+        
+    }{ \begin{spacing}{.1}\large Question \thequestion. Part \Alph{subquestion}. \newline \noindent\rule{\textwidth}{2pt}\end{spacing} \vskip20pt \normalsize}
+}
+
+
+% \renewcommand*{\thesection}{}
+% % \iftoggle{subsectionsNewPage}{}{}
+% \renewcommand*\thesubsection{ \newpage \normalsize \arabic{section}.\Alph{subsection} \ }
 
 %Comments
 \newcommand{\note}[1]{\textcolor{blue}{#1}}

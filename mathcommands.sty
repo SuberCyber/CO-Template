@@ -6,5 +6,24 @@
 %For matrices
 \usepackage{amsmath} 
 
+%% Matrix
 \newcommand{\sampleMatrix}{$$\begin{pmatrix} 5 \\ 3 \\ 9 \end{pmatrix} $$}
 
+%% Code
+\newcommand{\sampleAlgo}{
+    \begin{minted}[mathescape,
+        linenos,
+        numbersep=5pt,
+        frame=lines,
+        framesep=2mm]{c}
+    \end{minted}
+}
+
+%% Piecewise functions
+\newcommand{\samplePiece}{
+    \begin{equation*} T(n) = 
+        \begin{cases}  2T(n/2) + O(n^{1.59}) & n \geq 2 \\ 
+                                        O(1) & n \leq 1  
+        \end{cases} 
+    \end{equation*}
+}
