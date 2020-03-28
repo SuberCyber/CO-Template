@@ -27,7 +27,7 @@
 \setcounter{question}{0}
 \newcommand{\question}{
     \stepcounter{question}
-    \iftoggle{showQuestion}{\Large \newpage Question \thequestion. }{}
+    \iftoggle{showQuestion}{\Large \newpage Question \thequestion.\normalsize }{\newpage}
     \toggletrue{showQuestion}
     \defcounter{subsection}{0} 
 }
@@ -36,7 +36,7 @@
     \stepcounter{subquestion} 
     \iftoggle{subsectionsNewPages}{\newpage}{\vskip10pt}
     
-    \iftoggle{subsectionsNewPages}{\large Question \thequestion. Part \Alph{subquestion}.
+    \iftoggle{subsectionsNewPages}{\large Question \thequestion. Part \Alph{subquestion}. \normalsize
         
     }{ \begin{spacing}{.1}\large Question \thequestion. Part \Alph{subquestion}. \newline \noindent\rule{\textwidth}{2pt}\end{spacing} \vskip20pt \normalsize}
 }
