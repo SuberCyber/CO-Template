@@ -1,24 +1,40 @@
 \ProvidesPackage{mathcommands}
-\usepackage{minted}
+
 \newcommand{\xbar}{$\Bar{x}$}
 \newcommand{\lines}{$\equiv$}
 
-%For matrices
-\usepackage{amsmath} 
+
 
 %% Matrix
 \newcommand{\sampleMatrix}{$$\begin{pmatrix} 5 \\ 3 \\ 9 \end{pmatrix} $$}
 
 %% Code
-\newcommand{\sampleAlgo}{
-    \begin{minted}[mathescape,
-        linenos,
-        numbersep=5pt,
-        frame=lines,
-        framesep=2mm]{c}
-    \end{minted}
-}
 
+\newcommand{\sampleAlgo}{%https://www.math-linux.com/latex-26/faq/latex-faq/article/how-to-write-algorithm-and-pseudocode-in-latex-usepackage-algorithm-usepackage-algorithmic
+\begin{algorithm}
+\caption{Calculate $y = x^n$}
+\begin{algorithmic}
+\REQUIRE $n \geq 0 \vee x \neq 0$
+\ENSURE $y = x^n$
+\STATE $y \leftarrow 1$
+\IF{$n < 0$}
+\STATE $X \leftarrow 1 / x$
+\STATE $N \leftarrow -n$
+\ELSE
+\STATE $X \leftarrow x$
+\STATE $N \leftarrow n$
+\ENDIF
+\WHILE{$N \neq 0$}
+\IF{$N$ is even}
+\STATE $X \leftarrow X \times X$
+\STATE $N \leftarrow N / 2$
+\ELSE[$N$ is odd]
+\STATE $y \leftarrow y \times X$
+\STATE $N \leftarrow N - 1$
+\ENDIF
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}}
 %% Piecewise functions
 \newcommand{\samplePiece}{
     \begin{equation*} T(n) = 

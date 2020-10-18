@@ -1,63 +1,28 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{formatting}
 \usepackage{mathcommands}
 
 \newcommand{\class}{CS 341 Assignment 3}
 
-
-\usepackage{lipsum}
-
-\settoggle{subsectionsNewPages}{false}
-
-\settoggle{showQuestion}{true}
-
-\author{Mary Sybersma}
-
-\title{\class}
-%%%%%%%%%%%%%%%%%%%%%%%
-
-% CO 442 Naming Convention: Last442AX where x is the assignment number
-
-%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 \begin{document}
-
-
-\maketitle
-
 %%%%%%%%%%%%%%%%%%%%
 
 % Question 1
 
 %%%%%%%%%%%%%%%%%%%%
 
+\section{Brief Summary}
 
-\question
 \subsection*{Algorithm Description}
 
 \subsection*{Recurrence}
-\begin{equation*} T(i,j) = 
-        \begin{cases}  
-        \max(T(i-1,j), T(i-1,j-w_{i}) + w_i) & \text{if } i \geq 2, j > w_i \\ 
-                T(i-1,j)                     & \text{if } i \geq 2, j < w_i \\
-                                0            & \text{if } i = 1, j < w_i  \\
-        \end{cases} 
-\end{equation*}
+\samplePiece
 
 \subsection*{Pseudocode}
-\begin{minted}[mathescape,
-    linenos,
-    numbersep=5pt,
-    frame=lines,
-    framesep=2mm]{c}
-    for ( int i = 0; i < n ++i){
-        cout << true; 
-    }
-\end{minted}
+\sampleAlgo
 
 \subsection*{Runtime}
+We can tell 
 
 \subsection*{Correctness}
 
@@ -66,18 +31,11 @@
 % Question 2
 
 %%%%%%%%%%%%%%%%%%%%
-\togglefalse{showQuestion}
-\question
 
-\subquestion 
-\lipsum 
-\subquestion
-\lipsum
-\subquestion
-\subquestion
-\subquestion
-\question 
-
+\setcounter{section}{2}
+\newpage
+\subsection{Hey}
+\subsubsection*{Technically}
 
 
 \end{document}
